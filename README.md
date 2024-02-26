@@ -9,4 +9,4 @@ To start with this repo will just gather thoughts about how to accomplish this p
 * Use [100 pin ATF1508ASL](https://www.mouser.se/datasheet/2/268/atmel_doc0784-1180608.pdf chip) chip to handle most of all random logic on the board. It is even 5V compatible!
 * Use SEEQ DQ8023A encoder chip instead of Fujitsu MB502A. It is directly compatible with the 82586 and doesn't requires level converters or 100 MHz crystal. Should in theroy work directly. 
 * Use the [Xhomer](https://xhomer.isani.org/xhomer/) project and run it on a Raspi. Create a IO board for the Raspi that enables it to interface with the board (use pin headers for interfacing the raspi rather than the peculiar connector). Write software to make the connection between Xhomer and the real world.
-* 
+* [DECNA](DECNA.pdf) manual
