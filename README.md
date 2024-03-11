@@ -20,5 +20,5 @@ To start with this repo will just gather thoughts about how to accomplish this p
 * The Memory section is probably quite straight forward. It will require a state machine that synchronzises accesses to the shared memory. Static memory removes the need for a memory controller. The state machine need to be driven by some clock signal. I think that the 10 MHz Ethernet signal can be used for this. We still will need all the latches and buffers so that data can be read and stored and let the other entity to take control of the memory.
 * Create an emulated DECNA device in Xhomer to experiment with. There is an 82586 device in Mame. How can we have two CPUs executing instructions inside Xhomer? There is an eventqueue? To start with we just want to understand which regiuster go where. If we can verify that the Pro CPU is uploading code to the shared memory we are good to go.
 * The Pro motherboard are using inverting bus tranceivers 8307 and it is likely that the same chip is on the DECNA as well since the memory expansion board seems to use it as well. I think these can be replaced with 74LS640 or 74ALS640.
-* Is the 82586 running in MAXIMUM or MINIMUM mode? Pin 33 grounded or not?
+* Is the 82586 running in MAXIMUM or MINIMUM mode? Pin 33 grounded or not? It is now checked. It is connected to ground which means MAXIMUM mode. 
   
