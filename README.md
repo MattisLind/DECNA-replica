@@ -130,3 +130,6 @@ IIRC you should be forewarned: the datasheet is actually wrong in several import
 | MOSI   | EEPROM | - | EEPROM MOSI |
 | MISO   | EEPROM | - | EEPROM MISO |
 | D0-D7  | CTI    | - | Databus for IO signals |
+| CRS    | 8023   | - | Carrier sense from encoder / decoder - flip-flop is set when there is a transistion on this signal (?) - Check with the xhomer DECNA driver by Bjoren how this should work |
+| TEN    | 82586  | - | Transmit enable - potentially clearing the carrier sense flip-flop |
+| LOOPBACK | 8023 | - | Set up loopback
