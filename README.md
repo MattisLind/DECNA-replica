@@ -133,3 +133,21 @@ IIRC you should be forewarned: the datasheet is actually wrong in several import
 | CRS    | 8023   | - | Carrier sense from encoder / decoder - flip-flop is set when there is a transistion on this signal (?) - Check with the xhomer DECNA driver by Bjoren how this should work |
 | TEN    | 82586  | - | Transmit enable - potentially clearing the carrier sense flip-flop |
 | LOOPBACK | 8023 | - | Set up loopback
+| WRCLKA | DPRAM | -  | Write register clock port A |
+| WROEA  | DPRAM | -  | Port A Write register OE |
+| RDCLKA | DPRAM | -  | Read register clock port A |
+| RDOEA  | DPRAM | -  | Port A Read register OE |
+| WRCLKA | DPRAM | -  | Write register clock port B |
+| WROEA  | DPRAM | -  | Port B Write register OE |
+| RDCLKA | DPRAM | -  | Read register clock port B |
+| RDOEA  | DPRAM | -  | Port B Read register OE |
+| ASA    | DPRAM | -  | Port A address Strobe = BASL ? |
+| AOEA   | DPRAM | -  | Port A Address OE |
+| AOEB   | DPRAM | -  | Port B Address OE |
+| ASB    | DPRAM | -  | PORT B address Strobe |  
+| MOE    | MEM   | -  | Memory OE |
+| MWE    | MEM   | -  | Memory WE |
+| MUBE   | MEM   | -  | Memory Upper Byte Enable |
+| MLBE   | MEM   | -  | Memory Lower Byte Enable |
+| MCE    | MEM   | -  | Memory Chip Enable |
+| CLKIN  | CLK   | -  | 32 MHz general clock input |
