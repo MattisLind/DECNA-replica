@@ -24,6 +24,7 @@ To start with this repo will just gather thoughts about how to accomplish this p
 * The ARDY/SRDY (pin 37) on the 82586 is grounded.
 * The XACKAL signal (pin 2) from the 8207 is connected to (pin 11) Latch Enable on a 74LS373 meaning that when data is ready it is latched in the 74LS373 chip. I wonder if the XACKAL signal go somewhere else as well? I.e. involved in generating the BRPLY to the CTI bus?
 * Pin 17 of the MB502A Ethernet encoder decoder chip is connected to Vcc, this means that the signals from the MB502A to the transceiver is set up for an AC coupled path, i.e. a transformer.
+* The 82586 clock and ethernet serial data inputs need MOS levels. Use a 74ACT14 to get proper MOS levels.
 
 ### Some good info on the DECNA from Bjoren Davis
 
@@ -93,4 +94,9 @@ Hopefully that will give you more information to help you decode what's going on
 If you get further into it you'll need http://bitsavers.org/components/intel/ethernet/i82586.pdf and an app note in [http://bitsavers.org/components/intel/_dataBooks/1991_Microcommunications.pdf](http://bitsavers.org/components/intel/_dataBooks/1991_Microcommunications.pdf) (pp. 1-337 to 1-417).
 IIRC you should be forewarned: the datasheet is actually wrong in several important places. Off the top of my head I seem to recall it is wrong about the top-level shared RAM structure used by the i82586. The top-level "System Configuration Pointer" in the block at the last 10 bytes of memory does not point to the system configuration block (SCB). Instead, it points to something called an "intermediate system configuration pointer" (ISCP) which then points to the SCB. This is mentioned in the app note. Ugh.
 --Bjoren
-  
+
+### Signals to map onto the ATF1508 CPLD
+
+| Signal | Source | Pin |
+|--------|--------|-----|
+| 
