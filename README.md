@@ -97,6 +97,36 @@ IIRC you should be forewarned: the datasheet is actually wrong in several import
 
 ### Signals to map onto the ATF1508 CPLD
 
-| Signal | Source | Pin |
-|--------|--------|-----|
-| 
+| Signal | Source / Destination | Pin | Comment |
+|--------|--------|-----|-------|
+| RESET  | 82586  | 34 |
+| INT    | 82586  | 38  |
+| CLK    | 82586  | 32  | Need MOS buffer from the ATF1508 |
+| AD0    | 82586  | 6   | Needed to create High or Low write enable |
+| A17 -A23 | 82586 | 3-5, 45-47 | Maybe not needed since the internal dual port memory will become aliased over the entire 16 meg space |
+| CA      |  82586 | 35 |  Channel attention |
+| /BHE    |  82586  | 44 | To create the high and low write enable together with A0 |
+| READY   |  82586  | 39  | Ready signal - either this or ARDY/SRDY is to be used. |
+| ARDY/SRDY | 82586 | 37  | See above
+| /S0 /S1   | 82586 | 40, 41 | To generate all the read and write signals |
+| A1 - A6 | CTI  |  - | Input to IO port selection. Connected to the bus buffer DP8307 or the like |
+| SSxL   | CTI  | 29 | Slot select signal - already latched |
+| BIOSELL | CTI  | 43  | IO Select signal - need latching like address signal |
+| BWHBL   | CTI  | 23  | Bus Write High Byte Low |
+| BWLBL   | CTI | 21 |   Bus Write Low Byte Low |
+| BWRITEL | CTI | 19 |   Bus Write Low |
+| BDSL    | CTI | 37 |  Bus Data Strobe Low |
+| BASL    | CTI | 39 |  Bus Address Strobe Low |
+| BSDENL  | CTI | 25 |  Bus Slave Data Enable Low |
+| BMDENL  | CTI | 17 |  Bus Master Data Enable Low |
+| BINITL  | CTI | 5  | Bus Init Low |
+| BDCOKH | CTI | 1  |  Bus DC OK High |
+| BRPLYL | CTI | 13 | Bus Reply Low |
+| IRQBnL | CTI | 31 | Interrupt B |
+| IRQAnL | CTI | 33 | Interrupt A | 
+| SCK    | EEPROM | - | SPI CLOCK |
+| nHOLD  | EEPROM  | - | Hold signal |
+| nCS    |  EEPROM | - | EEPROM Chip Select |
+| MOSI   | EEPROM | - | EEPROM MOSI |
+| MISO   | EEPROM | - | EEPROM MISO |
+| D0-D7  | CTI    | - | Databus for IO signals |
