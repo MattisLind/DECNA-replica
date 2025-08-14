@@ -101,7 +101,7 @@ IIRC you should be forewarned: the datasheet is actually wrong in several import
 |--------|--------|-----|-------|
 | RESET  | 82586  | 34 |
 | INT    | 82586  | 38  |
-| CLK    | 82586  | 32  | Need MOS buffer from the ATF1508 |
+| CLK    | 82586  | 32  | Need MOS buffer from the ATF1508 - Use 74ACT04 or similar |
 | AD0    | 82586  | 6   | Needed to create High or Low write enable |
 | A17 -A23 | 82586 | 3-5, 45-47 | Maybe not needed since the internal dual port memory will become aliased over the entire 16 meg space |
 | CA      |  82586 | 35 |  Channel attention |
