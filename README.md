@@ -151,3 +151,4 @@ IIRC you should be forewarned: the datasheet is actually wrong in several import
 | MLBE   | MEM   | -  | Memory Lower Byte Enable |
 | MCE    | MEM   | -  | Memory Chip Enable |
 | CLKIN  | CLK   | -  | 32 MHz general clock input |
+| A17-A21 | CTI | - | Upper address used to compare with the base address in register 6. |
