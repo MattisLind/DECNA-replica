@@ -159,8 +159,8 @@ Prepare for using x16 and x8 SRAM chips since there are not very much available.
 
 Which footprints are there and in what way are they compatible? Is there a possibility install one or two and that the x16 have matching footprint of x8 while not having the full 16 bits connected?
 
-| Manufacturer | Type | JLC part number | Footprint |
-|--------------|------|-----------------|-----------|
-| Alliance Memory | AS7C1026B-12JCN | C1351435 |
-| Infineon/Cypress Semicon | CY62167ELL-45ZXI | C2950509 |
+| Manufacturer | Type | JLC part number | Organization | Footprint |
+|--------------|------|-----------------|-----------|--------------|
+| Alliance Memory | AS7C1026B-12JCN | C1351435 | 64k x 16 | 44 pin TSOP 2 / 44 pin SOJ |
+| Infineon/Cypress Semicon | CY62167ELL-45ZXI | C2950509 | 1M x 16 | 48 pin TSOP 1 |
 | 
