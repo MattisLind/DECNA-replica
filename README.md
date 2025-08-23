@@ -152,3 +152,15 @@ IIRC you should be forewarned: the datasheet is actually wrong in several import
 | MCE    | MEM   | -  | Memory Chip Enable |
 | CLKIN  | CLK   | -  | 32 MHz general clock input |
 | A17-A21 | CTI | - | Upper address used to compare with the base address in register 6. |
+
+## Components in JLC library
+
+Prepare for using x16 and x8 SRAM chips since there are not very much available.
+
+Which footprints are there and in what way are they compatible? Is there a possibility install one or two and that the x16 have matching footprint of x8 while not having the full 16 bits connected?
+
+| Manufacturer | Type | JLC part number | Footprint |
+|--------------|------|-----------------|
+| Alliance Memory | AS7C1026B-12JCN | C1351435 |
+| Infineon/Cypress Semicon | CY62167ELL-45ZXI | C2950509 |
+| 
