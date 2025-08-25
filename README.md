@@ -156,8 +156,8 @@ IIRC you should be forewarned: the datasheet is actually wrong in several import
 ## Components in JLC library
 
 
-| Manufacturer | Type | JLC part number | Pre order? | Min order | Price | Count |
-|--------------|------|-----------------|-----------|--------------|-----|-------|
+| Manufacturer | Type | JLC part number | Pre order? | Min order | Price | Footprint | Count |
+|--------------|------|-----------------|-----------|--------------|-----|-------|----------|
 | Texas Instruments | SN74ALS640B-1NSR | C2675997 | Yes | 4 | $2.6730 | SO-20-208mil |  3 |
 | Texas Instruments | SN74ACT04DR      | C6922    | No  | - | $0.1854 | SOIC-14 | 1 |
 | Texas Instruments | SN74ALS646DW     | C3753900 | Yes | 1 | $1.4715 | SOIC-24 | 4
