@@ -155,25 +155,11 @@ IIRC you should be forewarned: the datasheet is actually wrong in several import
 
 ## Components in JLC library
 
-Prepare for using x16 and x8 SRAM chips since there are not very much available.
 
-Which footprints are there and in what way are they compatible? Is there a possibility install one or two and that the x16 have matching footprint of x8 while not having the full 16 bits connected?
-
-Memory chips
-
-| Manufacturer | Type | JLC part number | Organization | Footprint |
-|--------------|------|-----------------|-----------|--------------|
-| Alliance Memory | AS7C1026B-12JCN | C1351435 | 64k x 16 | 44 pin TSOP 2 / 44 pin SOJ |
-| Infineon/Cypress Semicon | CY62167ELL-45ZXI | C2950509 | 1M x 16 | 48 pin TSOP 1 |
-| Alliance Memory | AS6C8008-55ZIN | C1349342 | 1Mx8 | TSOPII-44-10.2mm |
-| Alliance Memory | AS6C4008-55STIN | C1349756 | 512kx8 | STSOP-32-11.8mm |
-| Alliance Memory | AS6C4008-55ZIN | C1350078 | 512kx8 | TSOPII-32-10.2mm |
-| Alliance Memory | AS6C4008-55SIN | C1350086 | 512kx8 | SOP-32-11.3mm |
-| Alliance Memory | AS7C513B-12TCN | C1351267 | 32kx16 | TSOP-44-10.2mm |
-
-
-Other components
-| Manufacturer | Type | JLC part number | Pre order? | Min order | Price |
-|--------------|------|-----------------|-----------|--------------|-----|
-| Texas Instruments | SN74ALS640B-1DWR | C2676601 | Yes | 2 | $5.3505 |
-| Texas Instruments | SN74ALS640B-1NSR | C2675997 | Yes | 4 | $2.6730 |
+| Manufacturer | Type | JLC part number | Pre order? | Min order | Price | Count |
+|--------------|------|-----------------|-----------|--------------|-----|-------|
+| Texas Instruments | SN74ALS640B-1NSR | C2675997 | Yes | 4 | $2.6730 | SO-20-208mil |  3 |
+| Texas Instruments | SN74ACT04DR      | C6922    | No  | - | $0.1854 | SOIC-14 | 1 |
+| Texas Instruments | SN74ALS646DW     | C3753900 | Yes | 1 | $1.4715 | SOIC-24 | 4
+| Texas Instruments | SN74ALS573CDWR   | C7628    | Yes | 13| $0.6960 | SOIC-20-300mil | 6 |
+| Alliance Memory | AS7C1026B-12JCN    | C1351435 | No  | - | $6.0810 | SOJ-44 | 1 |
