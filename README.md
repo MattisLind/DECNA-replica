@@ -163,3 +163,4 @@ IIRC you should be forewarned: the datasheet is actually wrong in several import
 | Texas Instruments | SN74ALS646DW     | C3753900 | Yes | 1 | $1.4715 | SOIC-24 | 4
 | Texas Instruments | SN74ALS573CDWR   | C7628    | Yes | 13| $0.6960 | SOIC-20-300mil | 6 |
 | Alliance Memory | AS7C1026B-12JCN    | C1351435 | No  | - | $6.0810 | SOJ-44 | 1 |
+| Microchip Tech | ATF1508AS-10AU100 | C31179 | No | - | $21.4425 | TQFP-100(14x14) | 1 |
