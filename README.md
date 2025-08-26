@@ -97,21 +97,24 @@ IIRC you should be forewarned: the datasheet is actually wrong in several import
 
 ### Signals to map onto the ATF1508 CPLD
 
+An 100 pin TQFP / PQFP ATF1508 has 76 general IO pins to use. 4 pins is set aside for JTAG.
+
 | Signal | Source / Destination | Pin | Comment |
 |--------|--------|-----|-------|
 | RESET  | 82586  | 34 |
 | INT    | 82586  | 38  |
 | CLK    | 82586  | 32  | Need MOS buffer from the ATF1508 - Use 74ACT04 or similar |
 | AD0    | 82586  | 6   | Needed to create High or Low write enable |
-| A17 -A23 | 82586 | 3-5, 45-47 | Maybe not needed since the internal dual port memory will become aliased over the entire 16 meg space |
+| A17 -A23 | 82586 | 3-5, 45-47 | Maybe not needed since the internal dual port memory will become aliased over the entire 16 meg space - skip these to save pins.|
 | CA      |  82586 | 35 |  Channel attention |
 | /BHE    |  82586  | 44 | To create the high and low write enable together with A0 |
-| READY   |  82586  | 39  | Ready signal - either this or ARDY/SRDY is to be used. |
+| READY   |  82586  | 39  | Ready signal - either this or ARDY/SRDY is to be used. This is set in the firmware so it has to be investigated to be sure.|
 | ARDY/SRDY | 82586 | 37  | See above
 | /S0 /S1   | 82586 | 40, 41 | To generate all the read and write signals |
-| A1 - A6 | CTI  |  - | Input to IO port selection. Connected to the bus buffer DP8307 or the like |
+| A1 - A2 | CTI  |  - | Input to IO port selection. Connected to the bus buffer DP8307 or the like - We only need to partially decode the addresses. Not needed since we have AD=-AD7 which we can latch internally|
+| AD0-AD7 | CTI  | - | Databus for port IO access |
 | SSxL   | CTI  | 29 | Slot select signal - already latched |
-| BIOSELL | CTI  | 43  | IO Select signal - need latching like address signal |
+| BIOSELL | CTI  | 43  | IO Select signal - need latching like address signal - This signal is also not really needed when we have SSxL |
 | BWHBL   | CTI  | 23  | Bus Write High Byte Low |
 | BWLBL   | CTI | 21 |   Bus Write Low Byte Low |
 | BWRITEL | CTI | 19 |   Bus Write Low |
@@ -123,7 +126,7 @@ IIRC you should be forewarned: the datasheet is actually wrong in several import
 | BDCOKH | CTI | 1  |  Bus DC OK High |
 | BRPLYL | CTI | 13 | Bus Reply Low |
 | IRQBnL | CTI | 31 | Interrupt B |
-| IRQAnL | CTI | 33 | Interrupt A | 
+| IRQAnL | CTI | 33 | Interrupt A - not really necessary to have both IRQA and IRQB. A jumper is probably potentially useful.| 
 | SCK    | EEPROM | - | SPI CLOCK |
 | nHOLD  | EEPROM  | - | Hold signal |
 | nCS    |  EEPROM | - | EEPROM Chip Select |
@@ -155,6 +158,8 @@ IIRC you should be forewarned: the datasheet is actually wrong in several import
 
 ## Components in JLC library
 
+Use 74LS574 or 74LS646? The 646 is a quite complex device that provide functions that we are likely not to use. If both SAB and SBA is high stored data is used and not real time data from the other bus.
+That means 4 signals per set of 646 chips. I.e. the same amount of signals required for the 574 pair.
 
 | Manufacturer | Type | JLC part number | Pre order? | Min order | Price | Footprint | Count |
 |--------------|------|-----------------|-----------|--------------|-----|-------|----------|
