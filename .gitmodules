@@ -1,0 +1,3 @@
+[submodule "vhdl/atf15xx-yosys-docker"]
+	path = vhdl/atf15xx-yosys-docker
+	url = git@github.com:MattisLind/atf15xx-yosys-docker.git
